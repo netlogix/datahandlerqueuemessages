@@ -1,0 +1,13 @@
+{
+    "name": "netlogix/datahandlerqueuemessages",
+    "description": "Symfony Messenger messages for nxdatahandlerqueue TYPO3 extension",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netlogix\\DataHandlerQueueMessages\\": "src"
+        }
+    }
+}
