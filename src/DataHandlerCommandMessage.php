@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Netlogix\DataHandlerQueueMessages;
 
-final class DataHandlerCommandMessage
+use JsonSerializable;
+
+final class DataHandlerCommandMessage implements JsonSerializable
 {
     protected string $tableName;
     protected string $uid;
@@ -47,5 +49,15 @@ final class DataHandlerCommandMessage
     public function getValue()
     {
         return $this->value;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'tableName' => $this->tableName,
+            'uid' => $this->uid,
+            'command' => $this->command,
+            'value' => $this->value
+        ];
     }
 }
